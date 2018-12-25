@@ -68,11 +68,11 @@ class App extends React.Component {
     }
 
     
-    const newRoutes = this.state.routes;
+    const newRoutes = [...this.state.routes];
     const sourceItem = newRoutes[source.index];
     newRoutes.splice(source.index, 1);
     newRoutes.splice(destination.index, 0, sourceItem);
-    this.setState({ routes: newRoutes })
+    this.setState({ routes: newRoutes });
   }
 
   render() {
